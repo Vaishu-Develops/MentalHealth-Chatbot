@@ -1,31 +1,15 @@
 services:
-  # Backend API Service
   - type: web
-    name: mindful-companion-backend
+    name: mindful-companion
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn backend.api:app --host 0.0.0.0 --port $PORT
+    startCommand: python start_combined_server.py
     envVars:
       - key: GEMINI_API_KEY
         sync: false
       - key: TEST_MODE
         value: false
+      - key: PORT
+        value: $PORT
     healthCheckPath: /health
-
-  # Frontend Streamlit Service  
-  - type: web
-    name: mindful-companion-frontend
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: ./start_frontend.sh
-    envVars:
-      - key: GEMINI_API_KEY
-        sync: false
-      - key: BACKEND_URL
-        fromService:
-          type: web
-          name: mindful-companion-backend
-          property: host
-    healthCheckPath: /_stcore/health
