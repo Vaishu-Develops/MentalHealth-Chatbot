@@ -36,7 +36,16 @@ def start_frontend():
     os.environ["BACKEND_URL"] = "http://127.0.0.1:8000"
     
     # Get port from environment (Render sets this)
-    port = int(os.environ.get("PORT", 10000))
+    port_env = os.environ.get("PORT", "10000")
+    # Handle case where PORT might be literal '$PORT' string
+    if port_env == "$PORT":
+        port = 10000
+    else:
+        try:
+            port = int(port_env)
+        except ValueError:
+            print(f"⚠️ Invalid PORT value '{port_env}', using default 10000")
+            port = 10000
     
     # Start Streamlit
     cmd = [
