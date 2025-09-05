@@ -8,6 +8,17 @@ textColor = "#262730"
 headless = true
 enableCORS = false
 enableXsrfProtection = false
+maxUploadSize = 200
+maxMessageSize = 200
 
 [browser]
 gatherUsageStats = false
+
+[client]
+caching = true
+displayEnabled = true
+
+[runner]
+magicEnabled = true
+installTracer = false
+fixMatplotlib = true

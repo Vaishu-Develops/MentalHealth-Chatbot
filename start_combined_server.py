@@ -54,7 +54,10 @@ def start_frontend():
         "--server.address", "0.0.0.0",
         "--server.headless", "true",
         "--server.enableCORS", "false",
-        "--server.enableXsrfProtection", "false"
+        "--server.enableXsrfProtection", "false",
+        "--client.caching", "true",
+        "--runner.magicEnabled", "true",
+        "--logger.level", "error"
     ]
     
     subprocess.run(cmd)
