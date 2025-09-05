@@ -1,0 +1,134 @@
+/* Custom CSS for the mental health chatbot */
+
+/* Main container */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Chat container */
+.chat-container {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    height: 400px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.user-message {
+    background-color: #d1e7dd;
+    border-radius: 15px 15px 0 15px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 80%;
+    float: right;
+    clear: both;
+}
+
+.bot-message {
+    background-color: #cfe2ff;
+    border-radius: 15px 15px 15px 0;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 80%;
+    float: left;
+    clear: both;
+}
+
+.system-message {
+    background-color: #fff3cd;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px auto;
+    text-align: center;
+    clear: both;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.input-text {
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.send-button {
+    margin-left: 10px;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+/* Assessment card */
+.assessment-card {
+    background-color: #f0f7ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #0d6efd;
+}
+
+/* Crisis resources */
+.crisis-resources {
+    background-color: #f8d7da;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #dc3545;
+}
+
+/* Mood selector */
+.mood-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.mood-option {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.mood-option:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.mood-emoji {
+    font-size: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-animation {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Breathing animation */
+.breathing-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #9ec5fe;
+    margin: 20px auto;
+    animation: breathe 5s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); background-color: #9ec5fe; }
+    50% { transform: scale(1.5); background-color: #6ea8fe; }
+}

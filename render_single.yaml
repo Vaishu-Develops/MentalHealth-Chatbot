@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mindful-companion
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python start_combined_server.py
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: TEST_MODE
+        value: false
+      - key: PORT
+        value: $PORT
+    healthCheckPath: /health
